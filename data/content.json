@@ -1,0 +1,259 @@
+{
+  "profiles": {
+    "github": "https://github.com/Grojman",
+    "itch": "https://gomidev.itch.io",
+    "youtube": "https://www.youtube.com/@GomiDev-DeveloperYEscritor",
+    "instagram": "https://www.instagram.com/gomidev.developer/",
+    "amazon": null
+  },
+  "games": [
+    {
+      "title": "El Bar de los Magos",
+      "repo": "WizardWarClient",
+      "repo_url": "https://github.com/Grojman/WizardWarClient",
+      "website": "https://wizardbar.es",
+      "description": {
+        "es": "Un juego de cartas online para pasarlo bien y echarte unas partidas rápidas con tus amigos (Hecho Con Aweonao_crea).",
+        "en": "An online card game to have fun and play some quick matches with your friends (Made With Aweonao_crea)."
+      },
+      "language": "TypeScript",
+      "stars": 1,
+      "status": "released",
+      "updated": "2026-10-02T16:54:24Z",
+      "topics": []
+    },
+    {
+      "title": "GameJam2026",
+      "repo": "GameJam2026",
+      "repo_url": "https://github.com/Grojman/GameJam2026",
+      "website": null,
+      "description": null,
+      "language": "ShaderLab",
+      "stars": 1,
+      "status": "released",
+      "updated": "2026-08-18T23:35:24Z",
+      "topics": []
+    }
+  ],
+  "software": [
+    {
+      "title": "DRIVE-C-S-Backend",
+      "repo": "DRIVE-C-S-Backend",
+      "repo_url": "https://github.com/Grojman/DRIVE-C-S-Backend",
+      "website": null,
+      "description": null,
+      "language": "C#",
+      "stars": 0,
+      "status": "released",
+      "updated": "2026-10-08T09:51:42Z",
+      "topics": []
+    },
+    {
+      "title": "Gasci",
+      "repo": "Gasci",
+      "repo_url": "https://github.com/Grojman/Gasci",
+      "website": null,
+      "description": {
+        "es": "Gasci es un engine hecho en C# preparado para trabajar con la librería SadConsole para crear juegos basados en ASCII",
+        "en": "Gasci is a C# engine prepared to work with the SadConsole library to create ASCII-based games"
+      },
+      "language": "C#",
+      "stars": 0,
+      "status": "released",
+      "updated": "2026-10-06T19:43:28Z",
+      "topics": []
+    },
+    {
+      "title": "MultiRepositorio",
+      "repo": "MultiRepositorio",
+      "repo_url": "https://github.com/Grojman/MultiRepositorio",
+      "website": null,
+      "description": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "status": "released",
+      "updated": "2026-09-07T09:08:40Z",
+      "topics": []
+    },
+    {
+      "title": "MyPortfolio",
+      "repo": "MyPortfolio",
+      "repo_url": "https://github.com/Grojman/MyPortfolio",
+      "website": null,
+      "description": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "status": "released",
+      "updated": "2026-08-27T12:11:52Z",
+      "topics": []
+    },
+    {
+      "title": "MultiChallenge",
+      "repo": "MultiChallenge",
+      "repo_url": "https://github.com/Grojman/MultiChallenge",
+      "website": null,
+      "description": "Una aplicación web para las reuniones  de  la carrera de Ingeniería Multimedia, Participa en desafíos y consigue puntos al completarlos",
+      "language": null,
+      "stars": 0,
+      "status": "released",
+      "updated": "2026-07-18T14:10:38Z",
+      "topics": []
+    },
+    {
+      "title": "Sign-s-Traductor",
+      "repo": "Sign-s-Traductor",
+      "repo_url": "https://github.com/Grojman/Sign-s-Traductor",
+      "website": null,
+      "description": "WPF-based app that allows you to enter text and translate it to sign language using images that you can add.",
+      "language": "C#",
+      "stars": 0,
+      "status": "released",
+      "updated": "2026-07-12T12:43:01Z",
+      "topics": []
+    },
+    {
+      "title": "PUG",
+      "repo": "PUG",
+      "repo_url": "https://github.com/Grojman/PUG",
+      "website": null,
+      "description": "Stands for Plant Uml Generator. An Avalonia app proyect that I will use to try to learn this framework. It also works to generate class diagrams from any kind of proyect.",
+      "language": "C#",
+      "stars": 0,
+      "status": "released",
+      "updated": "2026-06-10T09:31:37Z",
+      "topics": []
+    },
+    {
+      "title": "FolderMapping",
+      "repo": "FolderMapping",
+      "repo_url": "https://github.com/Grojman/FolderMapping",
+      "website": "https://grojman.github.io/FolderMapping/",
+      "description": {
+        "es": "Un proyecto de javascript para crear una imagen de un árbol de archivos a partir de una carpeta arrastrada",
+        "en": "A javascript project to create an image of a file tree from a dropped folder"
+      },
+      "language": "JavaScript",
+      "stars": 1,
+      "status": "released",
+      "updated": "2026-05-29T13:15:54Z",
+      "topics": []
+    },
+    {
+      "title": "Storage",
+      "repo": "Storage",
+      "repo_url": "https://github.com/Grojman/Storage",
+      "website": "https://grojman.github.io/Storage/",
+      "description": {
+        "es": "Un repositorio lleno de clases estáticas y no estáticas construidas para el lenguaje C#, con propósitos generales.",
+        "en": "A repository full of static and non-static classes and services built for the C# language, with general purposes."
+      },
+      "language": "C#",
+      "stars": 1,
+      "status": "released",
+      "updated": "2026-02-09T16:25:31Z",
+      "topics": []
+    },
+    {
+      "title": "GamesReference",
+      "repo": "GamesReference",
+      "repo_url": "https://github.com/Grojman/GamesReference",
+      "website": null,
+      "description": null,
+      "language": "HTML",
+      "stars": 0,
+      "status": "released",
+      "updated": "2026-01-14T17:02:07Z",
+      "topics": []
+    },
+    {
+      "title": "Plain",
+      "repo": "Plain",
+      "repo_url": "https://github.com/Grojman/Plain",
+      "website": null,
+      "description": "Plain is a proyect of a text editor that allows you to previsualize your documents in a formatted style, while keeping them in plain text so you are not chained to any third-party software.",
+      "language": "C#",
+      "stars": 0,
+      "status": "released",
+      "updated": "2024-06-08T23:06:14Z",
+      "topics": []
+    },
+    {
+      "title": "LeagueOfLegendsAPIWebsite",
+      "repo": "LeagueOfLegendsAPIWebsite",
+      "repo_url": "https://github.com/Grojman/LeagueOfLegendsAPIWebsite",
+      "website": null,
+      "description": "Una página web que muestra contenido sobre el personaje seleccionado.",
+      "language": "JavaScript",
+      "stars": 0,
+      "status": "released",
+      "updated": "2023-06-06T11:40:24Z",
+      "topics": []
+    },
+    {
+      "title": "StoryMaker",
+      "repo": "StoryMaker",
+      "repo_url": "https://github.com/Grojman/StoryMaker",
+      "description": {
+        "es": "Un editor de texto para novelistas donde puedes organizar toda la información de tu histoira. Convierte tus proyectos en PDF's o Ebooks que puedas publicar directamente. Pensado para funcionar únicamente en Windows.",
+        "en": "A text editor for novelists where you can organize all the information of your story. Convert your projects into PDFs or Ebooks that you can publish directly. Designed to work only on Windows."
+      }
+    }
+  ],
+  "books": [
+    {
+      "title": "Verdades Incompletas",
+      "status": "writing",
+      "url": null,
+      "description": {
+        "es": "Has muerto, pero ese no es el final de esta historia. Creíste que hacías las cosas bien y mírate ahora; de la paz hiciste la guerra y de esta solo quedan tus remordimientos. Han venido a verte, buscan deshacer los entuertos, o eso piensan. Ahora no hay más remedio que observar en silencio el fruto de tus errores. Pero, ¿Hasta qué punto puedo declararte culpable?",
+        "en": " You have died, but that is not the end of it. You thought you were on the good side of the story and look at you now; from peace you made war and from that, only your remorse remains. They have come to see you, they want to make amends, or so they think. Now there is no choice but to silently observe the consequences of your mistakes. Yet I wonder, to what extend I can truly declare you guilty?"
+      }
+    }
+  ],
+  "media": {
+    "github": {
+      "url": "https://github.com/Grojman",
+      "items": [
+        {
+          "title": "DRIVE-C-S-Backend",
+          "url": "https://github.com/Grojman/DRIVE-C-S-Backend",
+          "date": "2026-10-08T09:51:42Z",
+          "description": null
+        },
+        {
+          "title": "Gasci",
+          "url": "https://github.com/Grojman/Gasci",
+          "date": "2026-10-06T19:43:28Z",
+          "description": "Gasci es un engine hecho en C# preparado para trabajar con la librería SadConsole para crear juegos basados en ASCII"
+        },
+        {
+          "title": "WizardWarServer",
+          "url": "https://github.com/Grojman/WizardWarServer",
+          "date": "2026-10-02T16:54:55Z",
+          "description": null
+        },
+        {
+          "title": "WizardWarClient",
+          "url": "https://github.com/Grojman/WizardWarClient",
+          "date": "2026-10-02T16:54:24Z",
+          "description": null
+        },
+        {
+          "title": "MultiRepositorio",
+          "url": "https://github.com/Grojman/MultiRepositorio",
+          "date": "2026-09-07T09:08:40Z",
+          "description": null
+        }
+      ]
+    },
+    "youtube": {
+      "url": "https://www.youtube.com/@GomiDev-DeveloperYEscritor",
+      "items": []
+    },
+    "instagram": {
+      "url": "https://www.instagram.com/gomidev.developer/",
+      "items": []
+    }
+  },
+  "generated_at": "2026-10-09T20:39:00+00:00"
+}

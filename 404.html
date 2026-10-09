@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GomiDev · 404</title>
+    <style>
+      html, body { margin: 0; min-height: 100vh; background: #000; color: #fff; }
+      body { font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; padding: 2rem 16px; line-height: 1.6; }
+      main { max-width: 980px; margin: 0 auto; }
+      a { color: #fff; font-weight: 700; text-underline-offset: 3px; overflow-wrap: anywhere; }
+      a:hover, a:focus-visible { background: #fff; color: #000; text-decoration: none; outline: none; }
+      .cursor { animation: blink 1s steps(1) infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>&gt; cd <span id="path"></span></p>
+      <p>bash: cd: No existe el archivo o el directorio / No such file or directory (404)</p>
+      <p>&gt; cd ~ &nbsp;→ <a id="home" href="/">/</a></p>
+      <p>&gt; <span class="cursor">█</span></p>
+    </main>
+    <script>
+      document.getElementById("path").textContent = location.pathname;
+      // Project sites on github.io live under /<repo>/; custom domains live at /.
+      var base = location.hostname.endsWith("github.io") ? "/" + (location.pathname.split("/")[1] || "") + "/" : "/";
+      var a = document.getElementById("home");
+      a.href = base;
+      a.textContent = location.origin + base;
+    </script>
+  </body>
+</html>

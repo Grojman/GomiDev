@@ -1,0 +1,560 @@
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --gutter: 16px;
+  --max: 980px;
+  --char: 0.6; /* glyph width / font-size for the monospace font */
+
+  /* terminal accent palette (all readable on black) */
+  --c-green: #4ade80;
+  --c-cyan: #22d3ee;
+  --c-yellow: #facc15;
+  --c-magenta: #e879f9;
+  --c-blue: #60a5fa;
+  --c-orange: #fb923c;
+  --c-red: #f87171;
+  --accent: var(--fg);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, "Cascadia Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  font-size: clamp(13px, 0.6vw + 10px, 16px);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+#nav,
+#main,
+#footer {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+#main {
+  flex: 1;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+h1,
+h2,
+h3,
+p,
+dl,
+ul {
+  margin: 0 0 0.8em;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+a {
+  color: var(--fg);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px dashed var(--fg);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------- urls (CLI-style highlight) */
+
+.url {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+  font-weight: 700;
+}
+
+.url:hover,
+.url:focus-visible {
+  background: var(--fg);
+  color: var(--bg);
+  text-decoration: none;
+  outline: none;
+}
+
+/* ---------------------------------------------------------------- nav */
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5em 1.5em;
+  padding: 1rem 0 0.8rem;
+  border-bottom: 1px dashed var(--fg);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em 0.9em;
+  align-items: baseline;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
+
+.nav-links a::before {
+  content: "[";
+}
+
+.nav-links a::after {
+  content: "]";
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-links a[aria-current="page"] {
+  background: var(--fg);
+  color: var(--bg);
+  outline: none;
+}
+
+.lang {
+  white-space: nowrap;
+}
+
+.lang button {
+  font: inherit;
+  color: var(--fg);
+  background: none;
+  border: 0;
+  padding: 0 0.2em;
+  cursor: pointer;
+}
+
+.lang button.active {
+  background: var(--fg);
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------- common blocks */
+
+.prompt {
+  font-weight: 700;
+}
+
+.cmd {
+  margin-top: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  margin: 2rem 0 1rem;
+  text-transform: uppercase;
+}
+
+.rule::before,
+.rule::after {
+  content: "";
+  height: 0;
+  border-top: 1px dashed var(--fg);
+}
+
+.rule::before {
+  width: 1.5em;
+}
+
+.rule::after {
+  flex: 1;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.1em 1.2ch;
+}
+
+.kv dt::before {
+  content: "  ";
+  white-space: pre;
+}
+
+.kv dd {
+  margin: 0;
+  min-width: 0;
+}
+
+.empty,
+.hint,
+.loader-skip {
+  font-style: italic;
+}
+
+.error {
+  font-weight: 700;
+}
+
+.badge {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------- ascii art */
+
+.ascii-wrap {
+  container-type: inline-size;
+  width: 100%;
+  max-width: 100%;
+}
+
+.ascii {
+  margin: 0 auto 1rem;
+  width: max-content;
+  max-width: 100%;
+  line-height: 1;
+  white-space: pre;
+  /* lines have different lengths; keep them left-aligned even inside centered containers */
+  text-align: left;
+  overflow: hidden;
+  /* shrink the glyphs until every column fits the available width */
+  font-size: min(var(--ascii-max, 13px), calc(100cqi / (var(--cols) * var(--char))));
+  user-select: none;
+}
+
+/* ---------------------------------------------------------------- home */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.ascii.banner {
+  --ascii-max: 18px;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.welcome {
+  margin-bottom: 1rem;
+}
+
+.bio {
+  max-width: 62ch;
+  margin-top: 0.5rem;
+}
+
+.sections {
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+}
+
+.ls {
+  list-style: none;
+  padding: 0;
+}
+
+.ls a {
+  display: grid;
+  grid-template-columns: max-content 11ch minmax(0, 1fr);
+  gap: 0 1.5ch;
+  padding: 0.15em 0.5ch;
+  text-decoration: none;
+}
+
+.ls a:hover,
+.ls a:focus-visible {
+  background: var(--fg);
+  color: var(--bg);
+  outline: none;
+}
+
+.ls .dir {
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .ls a {
+    grid-template-columns: max-content minmax(0, 1fr);
+    padding: 0.4em 0.5ch;
+  }
+  .ls .perm {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------- entries / cards */
+
+.entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.entry:has(.ascii-wrap) {
+  grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);
+}
+
+.entry h3 {
+  margin-bottom: 0.3em;
+}
+
+.sub {
+  margin-top: 1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  border: 1px dashed var(--fg);
+  padding: 0.75rem;
+  min-width: 0;
+}
+
+.list .card {
+  border: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.cards .card .kv {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.cards .card .kv dt::before {
+  content: none;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+@media (max-width: 720px) {
+  .entry:has(.ascii-wrap),
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .about .ascii-wrap {
+    max-width: 18rem;
+    margin: 0 auto;
+  }
+}
+
+/* ---------------------------------------------------------------- footer */
+
+#footer {
+  padding-bottom: 1.5rem;
+}
+
+#footer::before {
+  content: "";
+  display: block;
+  border-top: 1px dashed var(--fg);
+  margin-bottom: 1rem;
+}
+
+#footer p {
+  margin: 0 0 0.3em;
+}
+
+.cursor {
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------------------------------------------------------------- loader */
+
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: var(--bg);
+  padding: 1.5rem var(--gutter);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: opacity 0.15s linear;
+}
+
+#loader[hidden] {
+  display: none;
+}
+
+#loader.leaving {
+  opacity: 0;
+}
+
+.loader-log {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.loader-log p {
+  margin: 0 0 0.25em;
+}
+
+.loader-skip {
+  text-align: center;
+}
+
+body.loading:not(.ready) #main,
+body.loading:not(.ready) #footer {
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------------------------- colors */
+
+/* rotating accents for list items */
+.c0 { --accent: var(--c-green); }
+.c1 { --accent: var(--c-cyan); }
+.c2 { --accent: var(--c-yellow); }
+.c3 { --accent: var(--c-magenta); }
+.c4 { --accent: var(--c-blue); }
+.c5 { --accent: var(--c-orange); }
+
+/* one fixed color per section (home list + nav) */
+.sec-home { --accent: var(--fg); }
+.sec-games { --accent: var(--c-green); }
+.sec-software { --accent: var(--c-cyan); }
+.sec-books { --accent: var(--c-yellow); }
+.sec-about { --accent: var(--c-magenta); }
+.sec-media { --accent: var(--c-blue); }
+
+/* status colors */
+.st-wip { --accent: var(--c-yellow); }
+.st-done { --accent: var(--c-green); }
+.st-writing { --accent: var(--c-magenta); }
+
+/* platform colors */
+.pf-youtube { --accent: var(--c-red); }
+.pf-instagram { --accent: var(--c-magenta); }
+.pf-github { --accent: var(--c-blue); }
+
+.rule {
+  color: var(--accent);
+}
+
+.rule::before,
+.rule::after {
+  border-color: var(--accent);
+}
+
+.badge {
+  color: var(--accent);
+}
+
+.nav-links a {
+  color: var(--accent);
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-links a[aria-current="page"] {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.ls .dir {
+  color: var(--accent);
+}
+
+.ls a:hover,
+.ls a:focus-visible {
+  background: var(--accent);
+}
+
+.ls a:hover .dir,
+.ls a:focus-visible .dir {
+  color: var(--bg);
+}
+
+.entry {
+  border-left: 2px solid var(--accent);
+  padding-left: 1ch;
+}
+
+.entry .title,
+.card .title {
+  color: var(--accent);
+}
+
+.entry .kv dt,
+.card .kv dt {
+  color: var(--accent);
+}
+
+.entry .url,
+.card .url {
+  text-decoration-color: var(--accent);
+}
+
+.entry .url:hover,
+.entry .url:focus-visible,
+.card .url:hover,
+.card .url:focus-visible {
+  background: var(--accent);
+}
+
+.card {
+  border-color: var(--accent);
+}
+
+.list .card {
+  border-left: 2px solid var(--accent);
+  padding-left: 1ch;
+}

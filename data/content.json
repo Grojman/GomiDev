@@ -8,6 +8,18 @@
   },
   "games": [
     {
+      "title": "WizardWarServer",
+      "repo": "WizardWarServer",
+      "repo_url": "https://github.com/Grojman/WizardWarServer",
+      "website": null,
+      "description": null,
+      "language": "C#",
+      "stars": 1,
+      "status": "released",
+      "updated": "2026-10-02T16:54:55Z",
+      "topics": []
+    },
+    {
       "title": "El Bar de los Magos",
       "repo": "WizardWarClient",
       "repo_url": "https://github.com/Grojman/WizardWarClient",
@@ -255,5 +267,5 @@
       "items": []
     }
   },
-  "generated_at": "2026-10-09T20:39:00+00:00"
+  "generated_at": "2026-10-09T20:49:14+00:00"
 }

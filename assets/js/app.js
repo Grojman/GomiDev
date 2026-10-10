@@ -2,8 +2,9 @@
   "use strict";
 
   const PAGES = ["home", "games", "software", "books", "about", "media"];
+  const SITE = "https://gomidev.es/";
   const PAGE_FILES = {
-    home: "index.html",
+    home: "./",
     games: "games.html",
     software: "software.html",
     books: "books.html",
@@ -35,7 +36,41 @@
     try {
       localStorage.setItem("lang", next);
     } catch (_) {}
+    // keep the address bar on the URL search engines index for this language
+    history.replaceState(null, "", location.pathname + langQuery() + location.hash);
     render();
+  }
+
+  // Spanish lives at the plain URL, English at ?lang=en (see the hreflang links and sitemap.xml).
+  const langQuery = () => (lang === "en" ? "?lang=en" : "");
+  const pageHref = (p) => PAGE_FILES[p] + langQuery();
+
+  // ------------------------------------------------------------------ SEO
+
+  function setMeta(selector, attr, value) {
+    const el = document.head.querySelector(selector);
+    if (el) el.setAttribute(attr, value);
+  }
+
+  function updateMeta() {
+    const title = t(`meta.${page}.title`);
+    const description = t(`meta.${page}.description`);
+    const url = SITE + (page === "home" ? "" : PAGE_FILES[page]) + langQuery();
+    document.title = title;
+    setMeta('meta[name="description"]', "content", description);
+    setMeta('meta[property="og:title"]', "content", title);
+    setMeta('meta[property="og:description"]', "content", description);
+    setMeta('meta[property="og:url"]', "content", url);
+    setMeta('meta[property="og:locale"]', "content", lang === "en" ? "en_US" : "es_ES");
+    setMeta('meta[property="og:locale:alternate"]', "content", lang === "en" ? "es_ES" : "en_US");
+    // The canonical depends on the language, so it is only ever set here (never in the static HTML).
+    let canonical = document.head.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = url;
   }
 
   // ------------------------------------------------------------------ helpers
@@ -105,7 +140,7 @@
     }
     const links = PAGES.map(
       (p) =>
-        `<a class="sec-${p}" href="${PAGE_FILES[p]}"${p === page ? ' aria-current="page"' : ""}>${esc(t("nav." + p))}</a>`,
+        `<a class="sec-${p}" href="${pageHref(p)}"${p === page ? ' aria-current="page"' : ""}>${esc(t("nav." + p))}</a>`,
     ).join(" ");
     nav.innerHTML = `<nav class="topbar" aria-label="main">
       <div class="nav-links"><span class="prompt">${esc(t("nav.prompt"))}</span> ${esc(t("nav.cd"))} ${links}</div>
@@ -128,7 +163,7 @@
     const [banner, logo] = await Promise.all([loadText("assets/ascii/banner.txt"), loadText("assets/ascii/logo.txt")]);
     const sections = PAGES.filter((p) => p !== "home")
       .map(
-        (p) => `<li class="sec-${p}"><a href="${PAGE_FILES[p]}">
+        (p) => `<li class="sec-${p}"><a href="${pageHref(p)}">
           <span class="perm">drwxr-xr-x</span>
           <span class="dir">${esc(t("nav." + p))}/</span>
           <span class="desc">${esc(t("section." + p))}</span></a></li>`,
@@ -281,6 +316,7 @@
 
   async function render() {
     document.documentElement.lang = lang;
+    updateMeta();
     const data = await dataPromise;
     renderNav();
     renderFooter(data);

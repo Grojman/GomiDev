@@ -5,6 +5,24 @@
 window.I18N = {
   es: {
     "meta.title": "GomiDev",
+    "meta.home.title": "GomiDev · Videojuegos, software y libros",
+    "meta.home.description":
+      "GomiDev: desarrollador de videojuegos, herramientas de software de código abierto y escritor. " +
+      "Juegos, programas, libros y vídeos en una web con estilo de terminal.",
+    "meta.games.title": "GomiDev · Juegos",
+    "meta.games.description":
+      "Videojuegos creados por GomiDev: juegos publicados y en desarrollo, con enlaces a itch.io y GitHub.",
+    "meta.software.title": "GomiDev · Software",
+    "meta.software.description":
+      "Herramientas y aplicaciones de código abierto de GomiDev: motores ASCII, utilidades y librerías en C#, JavaScript y más.",
+    "meta.books.title": "GomiDev · Libros",
+    "meta.books.description": "Libros de GomiDev: novelas publicadas y en proceso de escritura.",
+    "meta.about.title": "GomiDev · Sobre mí",
+    "meta.about.description":
+      "Quién es GomiDev: desarrollador de videojuegos, creador de software y escritor de España. Contacto y redes sociales.",
+    "meta.media.title": "GomiDev · Media",
+    "meta.media.description":
+      "Últimos vídeos de YouTube, publicaciones de Instagram y repositorios de GitHub de GomiDev.",
     "nav.prompt": "gomidev@web:~$",
     "nav.cd": "cd",
     "nav.lang": "idioma",
@@ -89,6 +107,24 @@ window.I18N = {
 
   en: {
     "meta.title": "GomiDev",
+    "meta.home.title": "GomiDev · Video games, software and books",
+    "meta.home.description":
+      "GomiDev: video game developer, open source software maker and writer. " +
+      "Games, programs, books and videos on a terminal-style website.",
+    "meta.games.title": "GomiDev · Games",
+    "meta.games.description":
+      "Video games made by GomiDev: released games and works in progress, with links to itch.io and GitHub.",
+    "meta.software.title": "GomiDev · Software",
+    "meta.software.description":
+      "Open source tools and applications by GomiDev: ASCII engines, utilities and libraries in C#, JavaScript and more.",
+    "meta.books.title": "GomiDev · Books",
+    "meta.books.description": "Books by GomiDev: published novels and works in progress.",
+    "meta.about.title": "GomiDev · About me",
+    "meta.about.description":
+      "Who GomiDev is: a video game developer, software maker and writer from Spain. Contact and social media.",
+    "meta.media.title": "GomiDev · Media",
+    "meta.media.description":
+      "Latest YouTube videos, Instagram posts and GitHub repositories by GomiDev.",
     "nav.prompt": "gomidev@web:~$",
     "nav.cd": "cd",
     "nav.lang": "lang",

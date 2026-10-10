@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://gomidev.es/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gomidev.es/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gomidev.es/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gomidev.es/" />
+  </url>
+  <url>
+    <loc>https://gomidev.es/?lang=en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gomidev.es/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gomidev.es/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gomidev.es/" />
+  </url>
+  <url>
+    <loc>https://gomidev.es/games.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gomidev.es/games.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gomidev.es/games.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gomidev.es/games.html" />
+  </url>
+  <url>
+    <loc>https://gomidev.es/games.html?lang=en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gomidev.es/games.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gomidev.es/games.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gomidev.es/games.html" />
+  </url>
+  <url>
+    <loc>https://gomidev.es/software.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gomidev.es/software.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gomidev.es/software.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gomidev.es/software.html" />
+  </url>
+  <url>
+    <loc>https://gomidev.es/software.html?lang=en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gomidev.es/software.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gomidev.es/software.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gomidev.es/software.html" />
+  </url>
+  <url>
+    <loc>https://gomidev.es/books.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gomidev.es/books.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gomidev.es/books.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gomidev.es/books.html" />
+  </url>
+  <url>
+    <loc>https://gomidev.es/books.html?lang=en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gomidev.es/books.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gomidev.es/books.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gomidev.es/books.html" />
+  </url>
+  <url>
+    <loc>https://gomidev.es/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gomidev.es/about.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gomidev.es/about.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gomidev.es/about.html" />
+  </url>
+  <url>
+    <loc>https://gomidev.es/about.html?lang=en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gomidev.es/about.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gomidev.es/about.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gomidev.es/about.html" />
+  </url>
+  <url>
+    <loc>https://gomidev.es/media.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gomidev.es/media.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gomidev.es/media.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gomidev.es/media.html" />
+  </url>
+  <url>
+    <loc>https://gomidev.es/media.html?lang=en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gomidev.es/media.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gomidev.es/media.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gomidev.es/media.html" />
+  </url>
+</urlset>

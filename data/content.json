@@ -8,18 +8,6 @@
   },
   "games": [
     {
-      "title": "WizardWarServer",
-      "repo": "WizardWarServer",
-      "repo_url": "https://github.com/Grojman/WizardWarServer",
-      "website": null,
-      "description": null,
-      "language": "C#",
-      "stars": 1,
-      "status": "released",
-      "updated": "2026-10-02T16:54:55Z",
-      "topics": []
-    },
-    {
       "title": "El Bar de los Magos",
       "repo": "WizardWarClient",
       "repo_url": "https://github.com/Grojman/WizardWarClient",
@@ -31,7 +19,19 @@
       "language": "TypeScript",
       "stars": 1,
       "status": "released",
-      "updated": "2026-10-02T16:54:24Z",
+      "updated": "2026-10-10T19:03:55Z",
+      "topics": []
+    },
+    {
+      "title": "WizardWarServer",
+      "repo": "WizardWarServer",
+      "repo_url": "https://github.com/Grojman/WizardWarServer",
+      "website": null,
+      "description": null,
+      "language": "C#",
+      "stars": 1,
+      "status": "released",
+      "updated": "2026-10-10T19:01:13Z",
       "topics": []
     },
     {
@@ -227,6 +227,18 @@
       "url": "https://github.com/Grojman",
       "items": [
         {
+          "title": "WizardWarClient",
+          "url": "https://github.com/Grojman/WizardWarClient",
+          "date": "2026-10-10T19:03:55Z",
+          "description": null
+        },
+        {
+          "title": "WizardWarServer",
+          "url": "https://github.com/Grojman/WizardWarServer",
+          "date": "2026-10-10T19:01:13Z",
+          "description": null
+        },
+        {
           "title": "DRIVE-C-S-Backend",
           "url": "https://github.com/Grojman/DRIVE-C-S-Backend",
           "date": "2026-10-08T09:51:42Z",
@@ -237,18 +249,6 @@
           "url": "https://github.com/Grojman/Gasci",
           "date": "2026-10-06T19:43:28Z",
           "description": "Gasci es un engine hecho en C# preparado para trabajar con la librería SadConsole para crear juegos basados en ASCII"
-        },
-        {
-          "title": "WizardWarServer",
-          "url": "https://github.com/Grojman/WizardWarServer",
-          "date": "2026-10-02T16:54:55Z",
-          "description": null
-        },
-        {
-          "title": "WizardWarClient",
-          "url": "https://github.com/Grojman/WizardWarClient",
-          "date": "2026-10-02T16:54:24Z",
-          "description": null
         },
         {
           "title": "MultiRepositorio",
@@ -267,5 +267,5 @@
       "items": []
     }
   },
-  "generated_at": "2026-10-09T20:49:14+00:00"
+  "generated_at": "2026-10-11T12:47:12+00:00"
 }

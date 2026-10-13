@@ -47,7 +47,7 @@ window.I18N = {
       "¡Hola! Soy GomiDev, desarrollador de videojuegos, herramientas de software y escritor en mis ratos libres. " +
       "Aquí encontrarás todo lo que creo: juegos, programas, libros y vídeos. Ponte cómodo y explora con los comandos de abajo.",
     "home.ls": "ls ~/gomidev",
-    "home.hint": "Selecciona un directorio para entrar.",
+    "home.hint": "Selecciona un directorio para entrar, o escribe help en el prompt de abajo.",
 
     "games.cmd": "gomi games list --all",
     "games.released": "PUBLICADOS",
@@ -102,6 +102,14 @@ window.I18N = {
     "footer.made": "hecho a mano, carácter a carácter",
 
     "error.load": "error: no se pudo cargar data/content.json",
+    "term.label": "línea de comandos",
+    "term.notFound": "orden no encontrada",
+    "term.denied": "permiso denegado",
+    "term.noDir": "No existe el archivo o el directorio",
+    "term.help.title": "comandos disponibles:",
+    "term.help.help": "muestra esta lista",
+    "term.help.clear": "limpia la terminal",
+    "term.help.cd": "entra en un directorio:",
     "noscript": "Esta web necesita JavaScript para funcionar.",
   },
 
@@ -149,7 +157,7 @@ window.I18N = {
       "Hi! I'm GomiDev, a developer of video games and software tools, and a writer in my spare time. " +
       "Here you'll find everything I create: games, programs, books and videos. Make yourself at home and explore with the commands below.",
     "home.ls": "ls ~/gomidev",
-    "home.hint": "Select a directory to enter.",
+    "home.hint": "Select a directory to enter, or type help at the prompt below.",
 
     "games.cmd": "gomi games list --all",
     "games.released": "RELEASED",
@@ -204,6 +212,14 @@ window.I18N = {
     "footer.made": "handmade, one character at a time",
 
     "error.load": "error: could not load data/content.json",
+    "term.label": "command line",
+    "term.notFound": "command not found",
+    "term.denied": "permission denied",
+    "term.noDir": "No such file or directory",
+    "term.help.title": "available commands:",
+    "term.help.help": "show this list",
+    "term.help.clear": "clear the terminal",
+    "term.help.cd": "enter a directory:",
     "noscript": "This website needs JavaScript to work.",
   },
 };

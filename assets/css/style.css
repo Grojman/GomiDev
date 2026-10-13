@@ -398,6 +398,41 @@ button:focus-visible {
   margin: 0 0 0.3em;
 }
 
+.term {
+  display: flex;
+  align-items: baseline;
+  gap: 1ch;
+}
+
+.term input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  outline: none;
+  caret-color: var(--fg);
+  caret-shape: block;
+}
+
+/* long commands wrap instead of pushing the descriptions off a narrow screen */
+.kv.help {
+  grid-template-columns: fit-content(65%) minmax(0, 1fr);
+  margin-bottom: 0.3em;
+}
+
+.kv.help dt {
+  overflow-wrap: anywhere;
+}
+
+/* the fake cursor only stands in while the prompt is empty and unfocused */
+.term:focus-within .cursor,
+.term:has(input:not(:placeholder-shown)) .cursor {
+  display: none;
+}
+
 .cursor {
   animation: blink 1s steps(1) infinite;
 }

@@ -154,7 +154,81 @@
     document.getElementById("footer").innerHTML = `
       <p>&copy; ${year} GomiDev. ${esc(t("footer.rights"))}</p>
       <p>${esc(t("footer.made"))}${sync}</p>
-      <p class="cursor-line"><span class="prompt">${esc(t("nav.prompt"))}</span> <span class="cursor" aria-hidden="true">█</span></p>`;
+      <div class="term-log" aria-live="polite">${termLog.map(termEntry).join("")}</div>
+      <form class="term" id="term">
+        <label class="prompt" for="term-input">${esc(t("nav.prompt"))}</label>
+        <span class="cursor" aria-hidden="true">█</span>
+        <input id="term-input" type="text" placeholder=" " aria-label="${esc(t("term.label"))}"
+          autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" />
+      </form>`;
+  }
+
+  // ------------------------------------------------------------------ terminal
+
+  // Every command printed somewhere on the site (loader animations and page headers) opens its page.
+  const COMMANDS = {};
+  for (const p of PAGES) {
+    COMMANDS[LOADERS[p].cmd] = p;
+    for (const l of Object.keys(I18N)) COMMANDS[I18N[l][p === "home" ? "home.ls" : `${p}.cmd`]] = p;
+  }
+  const KNOWN = new Set(Object.keys(COMMANDS).map((c) => c.split(" ")[0]));
+  const HOME_DIRS = ["~", "..", "/", "~/gomidev"];
+
+  function helpOutput() {
+    const nav = (p) => t("nav." + p);
+    const rows = [
+      ["help", t("term.help.help")],
+      ["clear", t("term.help.clear")],
+      ["cd <dir>", `${t("term.help.cd")} ${PAGES.map(nav).join(", ")}`],
+      ...Object.entries(COMMANDS).map(([c, p]) => [c, `→ ${nav(p)}`]),
+    ];
+    return `<p>${esc(t("term.help.title"))}</p><dl class="kv help">${rows
+      .map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`)
+      .join("")}</dl>`;
+  }
+
+  // -> { page } to navigate, { clear } to wipe the log, or { html } / { error } to print
+  function resolveCommand(text) {
+    const [name, ...args] = text.split(" ");
+    if (name === "help") return { html: helpOutput() };
+    if (name === "clear") return { clear: true };
+    if (name === "cd") {
+      const arg = args[0] ?? "~";
+      const dir = arg.length > 1 ? arg.replace(/\/$/, "") : arg;
+      if (HOME_DIRS.includes(dir)) return { page: "home" };
+      const leaf = dir.replace(/^(~\/gomidev\/|~\/|\.\/)/, "");
+      const target = PAGES.find((p) => [p, ...Object.values(I18N).map((l) => l["nav." + p])].includes(leaf));
+      return target ? { page: target } : { error: `bash: cd: ${arg}: ${t("term.noDir")}` };
+    }
+    if (Object.hasOwn(COMMANDS, text)) return { page: COMMANDS[text] };
+    return { error: `bash: ${name}: ${t(KNOWN.has(name) ? "term.denied" : "term.notFound")}` };
+  }
+
+  // commands that printed something, kept so the log survives a language switch
+  const termLog = [];
+  const termEntry = (text) => {
+    const result = resolveCommand(text);
+    return cmd(text) + (result.html ?? `<p class="error">${esc(result.error)}</p>`);
+  };
+
+  function runCommand(input) {
+    const text = input.value.trim().replace(/\s+/g, " ");
+    input.value = "";
+    if (!text) return;
+    const result = resolveCommand(text);
+    if (result.page) {
+      location.href = pageHref(result.page);
+      return;
+    }
+    const log = document.querySelector(".term-log");
+    if (result.clear) {
+      termLog.length = 0;
+      log.innerHTML = "";
+      return;
+    }
+    termLog.push(text);
+    log.insertAdjacentHTML("beforeend", termEntry(text));
+    input.scrollIntoView({ block: "nearest" });
   }
 
   // ------------------------------------------------------------------ pages
@@ -382,6 +456,19 @@
   document.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-lang]");
     if (btn && btn.dataset.lang !== lang) setLang(btn.dataset.lang);
+  });
+
+  document.addEventListener("submit", (e) => {
+    if (e.target.id !== "term") return;
+    e.preventDefault();
+    runCommand(e.target.querySelector("input"));
+  });
+
+  // typing anywhere on the page goes to the prompt, like in a real terminal
+  document.addEventListener("keydown", (e) => {
+    if (e.key.length !== 1 || e.key === " " || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (!document.body.classList.contains("ready") || e.target.closest?.("input, textarea")) return;
+    document.getElementById("term-input")?.focus();
   });
 
   document.documentElement.lang = lang;

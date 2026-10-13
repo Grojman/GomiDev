@@ -20,7 +20,8 @@ scripts/update_content.py                  fetches GitHub / itch.io / YouTube / 
 scripts/ascii_art.py                       image -> ASCII converter (used for logo, covers, thumbnails)
 .github/workflows/deploy.yml               daily sync + deploy to GitHub Pages
 CNAME                                      custom domain (gomidev.es)
-robots.txt, sitemap.xml, favicon.svg       SEO: crawl rules, list of URLs (ES + EN), search-result icon
+robots.txt, sitemap.xml                    SEO: crawl rules, list of URLs (ES + EN)
+favicon.svg, favicon.ico, favicon-192.png  search-result / browser-tab icon (SVG + fallbacks)
 ```
 
 ## Editing content

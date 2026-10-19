@@ -19,7 +19,7 @@
       "language": "TypeScript",
       "stars": 1,
       "status": "released",
-      "updated": "2026-10-10T19:03:55Z",
+      "updated": "2026-10-19T09:42:59Z",
       "topics": []
     },
     {
@@ -57,7 +57,7 @@
       "language": "C#",
       "stars": 0,
       "status": "released",
-      "updated": "2026-10-17T16:12:16Z",
+      "updated": "2026-10-19T07:45:18Z",
       "topics": []
     },
     {
@@ -227,15 +227,15 @@
       "url": "https://github.com/Grojman",
       "items": [
         {
-          "title": "DRIVE-C-S-Backend",
-          "url": "https://github.com/Grojman/DRIVE-C-S-Backend",
-          "date": "2026-10-17T16:12:16Z",
+          "title": "WizardWarClient",
+          "url": "https://github.com/Grojman/WizardWarClient",
+          "date": "2026-10-19T09:42:59Z",
           "description": null
         },
         {
-          "title": "WizardWarClient",
-          "url": "https://github.com/Grojman/WizardWarClient",
-          "date": "2026-10-10T19:03:55Z",
+          "title": "DRIVE-C-S-Backend",
+          "url": "https://github.com/Grojman/DRIVE-C-S-Backend",
+          "date": "2026-10-19T07:45:18Z",
           "description": null
         },
         {
@@ -260,12 +260,19 @@
     },
     "youtube": {
       "url": "https://www.youtube.com/@GomiDev-DeveloperYEscritor",
-      "items": []
+      "items": [
+        {
+          "title": "Yo cuando intento desarrollar un videojuego:",
+          "url": "https://www.youtube.com/shorts/Fq0T9fVOl-Y",
+          "date": "2026-10-19T10:05:56+00:00",
+          "ascii": "...............:................:::::::::.......\n.............:::.....:..........:::::::::::.....\n............::::.....:--=-::....--::::::::::::..\n............::::.....:-=++=-::.:----::::::::::::\n...........::::-...:-+***=**+=-------:::::::::::\n...........:::....:=+#@@=-#%**+--------:::::::::\n..........:::.....-+++***%@@%##=:---------::::::\n..........::......-+-..*%#@@@@@+-------------:::\n..........::.......=-..#-.=@@@@*----------------\n.........::::......:..-:-=-##%@*:---------------\n..........:::........----*#+++*=.---------------\n...........:.......:::::--=-==+-.---------------\n..................:..........:...:--------------\n.................................:::------------"
+        }
+      ]
     },
     "instagram": {
       "url": "https://www.instagram.com/gomidev.developer/",
       "items": []
     }
   },
-  "generated_at": "2026-10-18T11:01:44+00:00"
+  "generated_at": "2026-10-19T11:39:07+00:00"
 }

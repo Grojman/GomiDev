@@ -29,7 +29,7 @@ favicon.svg, favicon.ico, favicon-192.png  search-result / browser-tab icon (SVG
 - **Texts (bio, about me, section descriptions)**: `assets/js/i18n.js`, both `es` and `en`.
 - **Loading animation commands**: `LOADERS` at the bottom of `assets/js/i18n.js`.
 - **Accounts**: `config.json` → `itch.user`, `youtube.handle` (e.g. `"@GomiDev"`) or `youtube.channel_id`,
-  `instagram.user`, `amazon.author_url`.
+  `instagram.user`, `tiktok.user`, `amazon.author_url`.
 - **Games**: any repo listed in `github.game_repos` or tagged with the GitHub topic `game` is a game.
   Everything else (except forks and `github.exclude`) is software. Add the topic `wip` to a repo to mark
   it "in development". Entries in `config.json` → `games` are merged with the automatic ones

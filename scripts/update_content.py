@@ -290,6 +290,7 @@ def main() -> None:
     )
     ig_user = username(cfg["instagram"].get("user"), r"instagram\.com/([\w.]+)")
     itch_user = username(cfg["itch"].get("user"), r"([\w-]+)\.itch\.io")
+    tt_user = username(cfg.get("tiktok", {}).get("user"), r"tiktok\.com/@([\w.]+)")
 
     content = {
         "profiles": {
@@ -297,6 +298,7 @@ def main() -> None:
             "itch": f"https://{itch_user}.itch.io" if itch_user else None,
             "youtube": yt_url,
             "instagram": f"https://www.instagram.com/{ig_user}/" if ig_user else None,
+            "tiktok": f"https://www.tiktok.com/@{tt_user}" if tt_user else None,
             "amazon": cfg["amazon"].get("author_url"),
         },
         "games": sort_by_date(games),

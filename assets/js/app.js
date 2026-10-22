@@ -328,7 +328,7 @@
 
   async function aboutPage(data) {
     const logo = await loadText("assets/ascii/logo.txt");
-    const socials = ["github", "youtube", "instagram", "itch", "amazon"]
+    const socials = ["github", "youtube", "instagram", "tiktok", "itch", "amazon"]
       .map((k) => [k, link(data?.profiles?.[k])]);
     return `
       ${cmd(t("about.cmd"))}

@@ -50,6 +50,18 @@
   ],
   "software": [
     {
+      "title": "MyPortfolio",
+      "repo": "MyPortfolio",
+      "repo_url": "https://github.com/Grojman/MyPortfolio",
+      "website": null,
+      "description": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "status": "released",
+      "updated": "2026-10-22T10:25:57Z",
+      "topics": []
+    },
+    {
       "title": "DRIVE-C-S-Backend",
       "repo": "DRIVE-C-S-Backend",
       "repo_url": "https://github.com/Grojman/DRIVE-C-S-Backend",
@@ -86,18 +98,6 @@
       "stars": 0,
       "status": "released",
       "updated": "2026-09-07T09:08:40Z",
-      "topics": []
-    },
-    {
-      "title": "MyPortfolio",
-      "repo": "MyPortfolio",
-      "repo_url": "https://github.com/Grojman/MyPortfolio",
-      "website": null,
-      "description": null,
-      "language": "JavaScript",
-      "stars": 0,
-      "status": "released",
-      "updated": "2026-08-27T12:11:52Z",
       "topics": []
     },
     {
@@ -228,6 +228,12 @@
       "url": "https://github.com/Grojman",
       "items": [
         {
+          "title": "MyPortfolio",
+          "url": "https://github.com/Grojman/MyPortfolio",
+          "date": "2026-10-22T10:25:57Z",
+          "description": null
+        },
+        {
           "title": "DRIVE-C-S-Backend",
           "url": "https://github.com/Grojman/DRIVE-C-S-Backend",
           "date": "2026-10-19T18:44:50Z",
@@ -250,18 +256,18 @@
           "url": "https://github.com/Grojman/Gasci",
           "date": "2026-10-06T19:43:28Z",
           "description": "Gasci es un engine hecho en C# preparado para trabajar con la librería SadConsole para crear juegos basados en ASCII"
-        },
-        {
-          "title": "MultiRepositorio",
-          "url": "https://github.com/Grojman/MultiRepositorio",
-          "date": "2026-09-07T09:08:40Z",
-          "description": null
         }
       ]
     },
     "youtube": {
       "url": "https://www.youtube.com/@GomiDev-DeveloperYEscritor",
       "items": [
+        {
+          "title": "No sé si no lo he dicho todaía, pero no me gusta el CSS ni el Javascript.",
+          "url": "https://www.youtube.com/shorts/-06q7vxsxeU",
+          "date": "2026-10-21T14:52:55+00:00",
+          "ascii": ".................-=-=------::::.................\n................:------------::.................\n................:-------:::::::.................\n................:------::::::::.................\n................:------------::.................\n................:------------::.................\n.................-----------:::.................\n................:---------:::::.................\n.................:----::::::---.................\n................:===--=====-::-:................\n................*%--+@#%%@@@*=%=................\n................*%:.:#%++=+@@@@=................\n................**.-:.+-++*%%%@=................\n................=#+*+:---=+=++*-................"
+        },
         {
           "title": "Yo cuando intento desarrollar un videojuego:",
           "url": "https://www.youtube.com/shorts/Fq0T9fVOl-Y",
@@ -275,5 +281,5 @@
       "items": []
     }
   },
-  "generated_at": "2026-10-20T11:33:43+00:00"
+  "generated_at": "2026-10-22T10:27:49+00:00"
 }

@@ -8,6 +8,9 @@ Optional environment variables (set them as repository secrets):
     GITHUB_TOKEN     higher GitHub API rate limit (provided automatically in Actions)
     ITCH_API_KEY     itch.io API key -> lists your itch.io games with ASCII covers
     INSTAGRAM_TOKEN  Instagram API access token -> latest posts with ASCII previews
+    TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET, TIKTOK_REFRESH_TOKEN
+                     TikTok Display API credentials -> latest videos with ASCII previews
+                     (get the refresh token once with scripts/tiktok_auth.py)
 """
 
 from __future__ import annotations
@@ -52,6 +55,18 @@ def http_get(url: str, headers: dict | None = None) -> bytes:
 
 def http_json(url: str, headers: dict | None = None):
     return json.loads(http_get(url, headers))
+
+
+def http_post_json(url: str, data: dict | None = None, json_body: dict | None = None, headers: dict | None = None):
+    if json_body is not None:
+        body, ctype = json.dumps(json_body).encode(), "application/json"
+    else:
+        body, ctype = urllib.parse.urlencode(data or {}).encode(), "application/x-www-form-urlencoded"
+    req = urllib.request.Request(
+        url, data=body, method="POST", headers={"User-Agent": USER_AGENT, "Content-Type": ctype, **(headers or {})}
+    )
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        return json.loads(resp.read())
 
 
 def ascii_from_url(url: str | None, cols: int = THUMB_COLS) -> str | None:
@@ -210,6 +225,43 @@ def fetch_instagram(cfg: dict) -> list[dict]:
     return posts
 
 
+def fetch_tiktok(cfg: dict) -> list[dict]:
+    key, secret, refresh = (os.environ.get(f"TIKTOK_{n}") for n in ("CLIENT_KEY", "CLIENT_SECRET", "REFRESH_TOKEN"))
+    if not (key and secret and refresh):
+        log("tiktok: TIKTOK_CLIENT_KEY / TIKTOK_CLIENT_SECRET / TIKTOK_REFRESH_TOKEN not set, skipping")
+        return []
+    # Access tokens last 24 h, so get a fresh one from the (365-day) refresh token on every run.
+    token = http_post_json(
+        "https://open.tiktokapis.com/v2/oauth/token/",
+        data={"client_key": key, "client_secret": secret, "grant_type": "refresh_token", "refresh_token": refresh},
+    )
+    if "access_token" not in token:
+        raise RuntimeError(f"token refresh failed: {token}")
+    if token.get("refresh_token") and token["refresh_token"] != refresh:
+        log("tiktok: WARNING TikTok issued a new refresh token; update the TIKTOK_REFRESH_TOKEN secret")
+    fields = "id,title,video_description,create_time,cover_image_url,share_url"
+    data = http_post_json(
+        f"https://open.tiktokapis.com/v2/video/list/?fields={fields}",
+        json_body={"max_count": cfg["limits"].get("tiktok", 6)},
+        headers={"Authorization": f"Bearer {token['access_token']}"},
+    )
+    if data.get("error", {}).get("code", "ok") != "ok":
+        raise RuntimeError(f"video list failed: {data['error']}")
+    videos = []
+    for v in data.get("data", {}).get("videos", []):
+        text = (v.get("title") or v.get("video_description") or "").strip().splitlines()
+        videos.append(
+            {
+                "title": text[0][:120] if text else None,
+                "url": v.get("share_url"),
+                "date": datetime.fromtimestamp(v["create_time"], timezone.utc).isoformat() if v.get("create_time") else None,
+                "ascii": ascii_from_url(v.get("cover_image_url")),
+            }
+        )
+    log(f"tiktok: {len(videos)} videos")
+    return videos
+
+
 # --------------------------------------------------------------------------- merging
 
 
@@ -277,6 +329,7 @@ def main() -> None:
     itch_games = attempt("itch", lambda: fetch_itch_games(cfg), [g for g in previous.get("games", []) if g.get("itch") and not g.get("repo")])
     videos = attempt("youtube", lambda: fetch_youtube(cfg), prev_media.get("youtube", {}).get("items", []))
     posts = attempt("instagram", lambda: fetch_instagram(cfg), prev_media.get("instagram", {}).get("items", []))
+    tiktoks = attempt("tiktok", lambda: fetch_tiktok(cfg), prev_media.get("tiktok", {}).get("items", []))
 
     games = merge_entries(merge_entries(gh_games, itch_games), cfg.get("games", []))
     software = merge_entries(gh_software, cfg.get("software", []))
@@ -308,6 +361,7 @@ def main() -> None:
             "github": {"url": f"https://github.com/{gh_user}", "items": recent},
             "youtube": {"url": yt_url, "items": videos},
             "instagram": {"url": f"https://www.instagram.com/{ig_user}/" if ig_user else None, "items": posts},
+            "tiktok": {"url": f"https://www.tiktok.com/@{tt_user}" if tt_user else None, "items": tiktoks},
         },
     }
 

@@ -518,6 +518,7 @@ body.loading:not(.ready) #footer {
 /* platform colors */
 .pf-youtube { --accent: var(--c-red); }
 .pf-instagram { --accent: var(--c-magenta); }
+.pf-tiktok { --accent: var(--c-cyan); }
 .pf-github { --accent: var(--c-blue); }
 
 .rule {

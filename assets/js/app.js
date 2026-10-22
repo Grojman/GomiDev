@@ -347,7 +347,7 @@
     const media = data.media || {};
     return (
       cmd(t("media.cmd")) +
-      [ "youtube", "instagram", "github"]
+      ["youtube", "instagram", "tiktok", "github"]
         .map((platform) => {
           const feed = media[platform] || {};
           const items = feed.items || [];

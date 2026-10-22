@@ -22,7 +22,7 @@ window.I18N = {
       "Quién es GomiDev: desarrollador de videojuegos, creador de software y escritor de España. Contacto y redes sociales.",
     "meta.media.title": "GomiDev · Media",
     "meta.media.description":
-      "Últimos vídeos de YouTube, publicaciones de Instagram y repositorios de GitHub de GomiDev.",
+      "Últimos vídeos de YouTube, publicaciones de Instagram, vídeos de TikTok y repositorios de GitHub de GomiDev.",
     "nav.prompt": "gomidev@web:~$",
     "nav.cd": "cd",
     "nav.lang": "idioma",
@@ -80,6 +80,7 @@ window.I18N = {
     "media.github": "últimos repositorios actualizados",
     "media.youtube": "últimos vídeos",
     "media.instagram": "últimas publicaciones",
+    "media.tiktok": "últimos vídeos",
 
     "about.name": "nombre",
     "about.role": "rol",
@@ -132,7 +133,7 @@ window.I18N = {
       "Who GomiDev is: a video game developer, software maker and writer from Spain. Contact and social media.",
     "meta.media.title": "GomiDev · Media",
     "meta.media.description":
-      "Latest YouTube videos, Instagram posts and GitHub repositories by GomiDev.",
+      "Latest YouTube videos, Instagram posts, TikTok videos and GitHub repositories by GomiDev.",
     "nav.prompt": "gomidev@web:~$",
     "nav.cd": "cd",
     "nav.lang": "lang",
@@ -190,6 +191,7 @@ window.I18N = {
     "media.github": "latest updated repositories",
     "media.youtube": "latest videos",
     "media.instagram": "latest posts",
+    "media.tiktok": "latest videos",
 
     "about.name": "name",
     "about.role": "role",
@@ -265,7 +267,7 @@ window.LOADERS = {
     },
   },
   media: {
-    cmd: "gomi feed sync --platforms=github,youtube,instagram",
+    cmd: "gomi feed sync --platforms=github,youtube,instagram,tiktok",
     steps: {
       es: [["abriendo sockets", "spin"], ["descargando publicaciones", "bar"], ["convirtiendo píxeles a ASCII", "dots"]],
       en: [["opening sockets", "spin"], ["downloading posts", "bar"], ["converting pixels to ASCII", "dots"]],

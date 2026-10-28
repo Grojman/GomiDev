@@ -20,7 +20,7 @@
       "language": "TypeScript",
       "stars": 1,
       "status": "released",
-      "updated": "2026-10-19T09:42:59Z",
+      "updated": "2026-10-28T11:39:28Z",
       "topics": []
     },
     {
@@ -228,6 +228,12 @@
       "url": "https://github.com/Grojman",
       "items": [
         {
+          "title": "WizardWarClient",
+          "url": "https://github.com/Grojman/WizardWarClient",
+          "date": "2026-10-28T11:39:28Z",
+          "description": null
+        },
+        {
           "title": "MyPortfolio",
           "url": "https://github.com/Grojman/MyPortfolio",
           "date": "2026-10-22T10:25:57Z",
@@ -237,12 +243,6 @@
           "title": "DRIVE-C-S-Backend",
           "url": "https://github.com/Grojman/DRIVE-C-S-Backend",
           "date": "2026-10-19T18:44:50Z",
-          "description": null
-        },
-        {
-          "title": "WizardWarClient",
-          "url": "https://github.com/Grojman/WizardWarClient",
-          "date": "2026-10-19T09:42:59Z",
           "description": null
         },
         {
@@ -377,5 +377,5 @@
       ]
     }
   },
-  "generated_at": "2026-10-26T12:58:42+00:00"
+  "generated_at": "2026-10-28T12:51:23+00:00"
 }

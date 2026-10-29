@@ -50,6 +50,18 @@
   ],
   "software": [
     {
+      "title": "DSM_WikiGames",
+      "repo": "DSM_WikiGames",
+      "repo_url": "https://github.com/Grojman/DSM_WikiGames",
+      "website": null,
+      "description": null,
+      "language": "C#",
+      "stars": 0,
+      "status": "released",
+      "updated": "2026-10-29T09:45:56Z",
+      "topics": []
+    },
+    {
       "title": "MyPortfolio",
       "repo": "MyPortfolio",
       "repo_url": "https://github.com/Grojman/MyPortfolio",
@@ -228,6 +240,12 @@
       "url": "https://github.com/Grojman",
       "items": [
         {
+          "title": "DSM_WikiGames",
+          "url": "https://github.com/Grojman/DSM_WikiGames",
+          "date": "2026-10-29T09:45:56Z",
+          "description": null
+        },
+        {
           "title": "WizardWarClient",
           "url": "https://github.com/Grojman/WizardWarClient",
           "date": "2026-10-28T11:39:28Z",
@@ -250,12 +268,6 @@
           "url": "https://github.com/Grojman/WizardWarServer",
           "date": "2026-10-10T19:01:13Z",
           "description": null
-        },
-        {
-          "title": "Gasci",
-          "url": "https://github.com/Grojman/Gasci",
-          "date": "2026-10-06T19:43:28Z",
-          "description": "Gasci es un engine hecho en C# preparado para trabajar con la librería SadConsole para crear juegos basados en ASCII"
         }
       ]
     },
@@ -377,5 +389,5 @@
       ]
     }
   },
-  "generated_at": "2026-10-28T12:51:23+00:00"
+  "generated_at": "2026-10-29T12:58:35+00:00"
 }

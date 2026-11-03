@@ -20,7 +20,7 @@
       "language": "TypeScript",
       "stars": 1,
       "status": "released",
-      "updated": "2026-10-28T11:39:28Z",
+      "updated": "2026-11-02T19:25:57Z",
       "topics": []
     },
     {
@@ -240,6 +240,12 @@
       "url": "https://github.com/Grojman",
       "items": [
         {
+          "title": "WizardWarClient",
+          "url": "https://github.com/Grojman/WizardWarClient",
+          "date": "2026-11-02T19:25:57Z",
+          "description": null
+        },
+        {
           "title": "DRIVE-C-S-Backend",
           "url": "https://github.com/Grojman/DRIVE-C-S-Backend",
           "date": "2026-11-02T09:39:09Z",
@@ -249,12 +255,6 @@
           "title": "DSM_WikiGames",
           "url": "https://github.com/Grojman/DSM_WikiGames",
           "date": "2026-10-29T09:45:56Z",
-          "description": null
-        },
-        {
-          "title": "WizardWarClient",
-          "url": "https://github.com/Grojman/WizardWarClient",
-          "date": "2026-10-28T11:39:28Z",
           "description": null
         },
         {
@@ -389,5 +389,5 @@
       ]
     }
   },
-  "generated_at": "2026-11-02T15:46:53+00:00"
+  "generated_at": "2026-11-03T14:10:21+00:00"
 }

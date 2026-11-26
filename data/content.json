@@ -13,6 +13,7 @@
       "repo": "WizardWarClient",
       "repo_url": "https://github.com/Grojman/WizardWarClient",
       "website": "https://wizardbar.es",
+      "pages": null,
       "description": {
         "es": "Un juego de cartas online para pasarlo bien y echarte unas partidas rápidas con tus amigos (Hecho Con Aweonao_crea).",
         "en": "An online card game to have fun and play some quick matches with your friends (Made With Aweonao_crea)."
@@ -28,6 +29,7 @@
       "repo": "WizardWarServer",
       "repo_url": "https://github.com/Grojman/WizardWarServer",
       "website": null,
+      "pages": null,
       "description": null,
       "language": "C#",
       "stars": 1,
@@ -40,6 +42,7 @@
       "repo": "GameJam2026",
       "repo_url": "https://github.com/Grojman/GameJam2026",
       "website": null,
+      "pages": null,
       "description": null,
       "language": "ShaderLab",
       "stars": 1,
@@ -50,27 +53,29 @@
   ],
   "software": [
     {
-      "title": "DSM_WikiGames",
-      "repo": "DSM_WikiGames",
-      "repo_url": "https://github.com/Grojman/DSM_WikiGames",
-      "website": null,
-      "description": null,
-      "language": "C#",
-      "stars": 0,
-      "status": "released",
-      "updated": "2026-11-25T10:35:08Z",
-      "topics": []
-    },
-    {
       "title": "DRIVE-C-S-Backend",
       "repo": "DRIVE-C-S-Backend",
       "repo_url": "https://github.com/Grojman/DRIVE-C-S-Backend",
       "website": null,
+      "pages": null,
       "description": null,
       "language": "C#",
       "stars": 0,
       "status": "released",
-      "updated": "2026-11-24T17:52:45Z",
+      "updated": "2026-11-26T12:17:52Z",
+      "topics": []
+    },
+    {
+      "title": "DSM_WikiGames",
+      "repo": "DSM_WikiGames",
+      "repo_url": "https://github.com/Grojman/DSM_WikiGames",
+      "website": null,
+      "pages": null,
+      "description": null,
+      "language": "C#",
+      "stars": 0,
+      "status": "released",
+      "updated": "2026-11-26T09:19:56Z",
       "topics": []
     },
     {
@@ -78,6 +83,7 @@
       "repo": "GInspectorAdvanced",
       "repo_url": "https://github.com/Grojman/GInspectorAdvanced",
       "website": null,
+      "pages": "https://grojman.github.io/GInspectorAdvanced/",
       "description": null,
       "language": "C++",
       "stars": 0,
@@ -90,6 +96,7 @@
       "repo": "MyPortfolio",
       "repo_url": "https://github.com/Grojman/MyPortfolio",
       "website": null,
+      "pages": "https://grojman.github.io/MyPortfolio/",
       "description": null,
       "language": "JavaScript",
       "stars": 0,
@@ -102,6 +109,7 @@
       "repo": "Gasci",
       "repo_url": "https://github.com/Grojman/Gasci",
       "website": null,
+      "pages": null,
       "description": {
         "es": "Gasci es un engine hecho en C# preparado para trabajar con la librería SadConsole para crear juegos basados en ASCII",
         "en": "Gasci is a C# engine prepared to work with the SadConsole library to create ASCII-based games"
@@ -117,6 +125,7 @@
       "repo": "MultiRepositorio",
       "repo_url": "https://github.com/Grojman/MultiRepositorio",
       "website": null,
+      "pages": "https://grojman.github.io/MultiRepositorio/",
       "description": null,
       "language": "JavaScript",
       "stars": 0,
@@ -129,6 +138,7 @@
       "repo": "MultiChallenge",
       "repo_url": "https://github.com/Grojman/MultiChallenge",
       "website": null,
+      "pages": null,
       "description": "Una aplicación web para las reuniones  de  la carrera de Ingeniería Multimedia, Participa en desafíos y consigue puntos al completarlos",
       "language": null,
       "stars": 0,
@@ -141,6 +151,7 @@
       "repo": "Sign-s-Traductor",
       "repo_url": "https://github.com/Grojman/Sign-s-Traductor",
       "website": null,
+      "pages": null,
       "description": "WPF-based app that allows you to enter text and translate it to sign language using images that you can add.",
       "language": "C#",
       "stars": 0,
@@ -153,6 +164,7 @@
       "repo": "PUG",
       "repo_url": "https://github.com/Grojman/PUG",
       "website": null,
+      "pages": "https://grojman.github.io/PUG/",
       "description": "Stands for Plant Uml Generator. An Avalonia app proyect that I will use to try to learn this framework. It also works to generate class diagrams from any kind of proyect.",
       "language": "C#",
       "stars": 0,
@@ -165,6 +177,7 @@
       "repo": "FolderMapping",
       "repo_url": "https://github.com/Grojman/FolderMapping",
       "website": "https://grojman.github.io/FolderMapping/",
+      "pages": "https://grojman.github.io/FolderMapping/",
       "description": {
         "es": "Un proyecto de javascript para crear una imagen de un árbol de archivos a partir de una carpeta arrastrada",
         "en": "A javascript project to create an image of a file tree from a dropped folder"
@@ -180,6 +193,7 @@
       "repo": "Storage",
       "repo_url": "https://github.com/Grojman/Storage",
       "website": "https://grojman.github.io/Storage/",
+      "pages": "https://grojman.github.io/Storage/",
       "description": {
         "es": "Un repositorio lleno de clases estáticas y no estáticas construidas para el lenguaje C#, con propósitos generales.",
         "en": "A repository full of static and non-static classes and services built for the C# language, with general purposes."
@@ -195,6 +209,7 @@
       "repo": "GamesReference",
       "repo_url": "https://github.com/Grojman/GamesReference",
       "website": null,
+      "pages": null,
       "description": null,
       "language": "HTML",
       "stars": 0,
@@ -207,6 +222,7 @@
       "repo": "Plain",
       "repo_url": "https://github.com/Grojman/Plain",
       "website": null,
+      "pages": null,
       "description": "Plain is a proyect of a text editor that allows you to previsualize your documents in a formatted style, while keeping them in plain text so you are not chained to any third-party software.",
       "language": "C#",
       "stars": 0,
@@ -219,6 +235,7 @@
       "repo": "LeagueOfLegendsAPIWebsite",
       "repo_url": "https://github.com/Grojman/LeagueOfLegendsAPIWebsite",
       "website": null,
+      "pages": "https://grojman.github.io/LeagueOfLegendsAPIWebsite/",
       "description": "Una página web que muestra contenido sobre el personaje seleccionado.",
       "language": "JavaScript",
       "stars": 0,
@@ -252,15 +269,15 @@
       "url": "https://github.com/Grojman",
       "items": [
         {
-          "title": "DSM_WikiGames",
-          "url": "https://github.com/Grojman/DSM_WikiGames",
-          "date": "2026-11-25T10:35:08Z",
+          "title": "DRIVE-C-S-Backend",
+          "url": "https://github.com/Grojman/DRIVE-C-S-Backend",
+          "date": "2026-11-26T12:17:52Z",
           "description": null
         },
         {
-          "title": "DRIVE-C-S-Backend",
-          "url": "https://github.com/Grojman/DRIVE-C-S-Backend",
-          "date": "2026-11-24T17:52:45Z",
+          "title": "DSM_WikiGames",
+          "url": "https://github.com/Grojman/DSM_WikiGames",
+          "date": "2026-11-26T09:19:56Z",
           "description": null
         },
         {
@@ -401,5 +418,5 @@
       ]
     }
   },
-  "generated_at": "2026-11-25T17:10:27+00:00"
+  "generated_at": "2026-11-26T12:35:31+00:00"
 }

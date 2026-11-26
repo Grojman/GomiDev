@@ -269,6 +269,7 @@
         ${kv([
           [t("field.itch"), link(item.itch)],
           [t("field.web"), link(item.website)],
+          [t("field.pages"), link(item.pages)],
           [t("field.repo"), link(item.repo_url)],
           [t("field.link"), link(item.url)],
           [t("field.lang"), esc(item.language)],

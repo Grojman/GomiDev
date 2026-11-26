@@ -94,11 +94,16 @@ def norm(text: str | None) -> str:
 # --------------------------------------------------------------------------- sources
 
 
-def fetch_github_repos(cfg: dict) -> list[dict]:
-    user = cfg["github"]["user"]
+def github_headers() -> dict:
     headers = {"Accept": "application/vnd.github+json"}
     if token := os.environ.get("GITHUB_TOKEN"):
         headers["Authorization"] = f"Bearer {token}"
+    return headers
+
+
+def fetch_github_repos(cfg: dict) -> list[dict]:
+    user = cfg["github"]["user"]
+    headers = github_headers()
     repos, page = [], 1
     while True:
         batch = http_json(
@@ -106,8 +111,27 @@ def fetch_github_repos(cfg: dict) -> list[dict]:
         )
         repos += batch
         if len(batch) < 100:
-            return repos
+            break
         page += 1
+    for repo in repos:
+        if repo.get("has_pages") and not repo.get("fork"):
+            repo["pages_url"] = fetch_pages_url(repo)
+    return repos
+
+
+def fetch_pages_url(repo: dict) -> str:
+    """Live GitHub Pages URL of a repo (honours custom domains); falls back to the default github.io URL."""
+    try:
+        url = http_json(f"https://api.github.com/repos/{repo['full_name']}/pages", github_headers()).get("html_url")
+        if url:
+            return url
+    except Exception as exc:  # 404 without a token with pages access: use the default URL
+        if getattr(exc, "code", None) != 404:
+            log(f"  could not fetch pages info for {repo['full_name']}: {exc}")
+    owner = repo["owner"]["login"].lower()
+    if repo["name"].lower() == f"{owner}.github.io":
+        return f"https://{owner}.github.io/"
+    return f"https://{owner}.github.io/{repo['name']}/"
 
 
 def repo_entry(repo: dict) -> dict:
@@ -117,6 +141,7 @@ def repo_entry(repo: dict) -> dict:
         "repo": repo["name"],
         "repo_url": repo["html_url"],
         "website": repo.get("homepage") or None,
+        "pages": pages if (pages := repo.get("pages_url")) and norm(pages) != norm(repo.get("homepage")) else None,
         "description": repo.get("description"),
         "language": repo.get("language"),
         "stars": repo.get("stargazers_count", 0),
